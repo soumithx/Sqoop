@@ -1,0 +1,17 @@
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop
+--password sqoop
+
+--query "SELECT normcities.id, \
+countries.country, \
+normcities.city \
+FROM normcities \
+JOIN countries USING(country_id) \
+WHERE $CONDITIONS' \
+--split-by id \
+--target-dir cities
+
+
+
+--split-by : It is used to specify the column of the table used to generate splits for imports. This means that it specifies which column will be used to create the split while importing the data into your cluster. It can be used to enhance the import performance by achieving greater parallelism. Sqoop creates splits based on values in a particular column of the table which is specified by --split-by by the user through the import command. If it is not available, the primary key of the input table is used to create the splits.

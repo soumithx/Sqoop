@@ -1,0 +1,5 @@
+sqoop import-all-tables \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop \
+--password sqoop \
+--exclude-tables cities,countries

@@ -1,0 +1,6 @@
+sqoop takes a long time to retrive the minimum and maximum values of the column in the --split 
+we can over come by passing a parameter --bounder-query
+
+sqoop import --connect xxx --username xxx --password xxxx --query xxxxxx --split-by id --targer-dir xxxx --boundary-query "select min(id),max(id) from normcitits"
+
+

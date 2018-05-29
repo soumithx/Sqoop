@@ -1,0 +1,22 @@
+all map reduce jobs are name under QueryResult.jar,it's very hard to see which map reduce job belongs to which imported query,
+
+we can overcome this problem by --mapreduce-job-name normicites 
+
+
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop \
+--password sqoop \
+--query 'SELECT normcities.id, \
+countries.country, \
+normcities.city \
+FROM normcities \
+JOIN countries USING(country_id) \
+WHERE $CONDITIONS' \
+--split-by id \
+--target-dir cities \
+--mapreduce-job-name normcities
+
+
+
+

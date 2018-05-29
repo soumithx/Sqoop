@@ -1,0 +1,10 @@
+-import will be failed if any dupliate column found 
+Imported Failed: Duplicate Column identifier specified: 'id'
+
+use sql projection to rename columns in the query so that the each column in the output result set has a unique name.
+
+--query "SELECT \
+cities.city AS first_city \
+normcities.city AS second_city \
+FROM cities \
+LEFT JOIN normcities USING(id)"
