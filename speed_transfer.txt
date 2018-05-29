@@ -1,0 +1,5 @@
+to speed up tranfer 
+sqoop import --connect jdbc:mysq://mysql.example.com/sqoo[ --username sqoop --password sqoop --table cities --direct
+
+
+

@@ -1,0 +1,13 @@
+sqoop import --connect jdbc:mysql://mysql.example.com --username sqoop --password sqoop --map-column-java id=long
+
+type mapping is process through which data object types defined by data providers are mapped to generic data types 
+
+for example in a table there are 3 columns c1,c2,c3,we need to change mapping in three columns c1,c2,c3 as float,string,string
+
+sqoop import --connect XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   --map-column-java c1=floatf,c2=string,c3=string
+								       --map-column-hive 
+
+
+
+
+

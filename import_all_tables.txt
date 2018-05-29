@@ -1,0 +1,5 @@
+sqoop import-all-tables \
+--connect jdbc:mysql://mysql.example.com \
+--username sqoop
+--password sqoop
+

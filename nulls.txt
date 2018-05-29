@@ -1,0 +1,9 @@
+sqoop import --connect jdbc:mysql://mysql.example.com
+--username sqoop
+--password sqoop
+--table cities 
+--null-string '\\N' \
+--null-non-string '\\N'
+
+
+overriding null values to any other aribitary values 

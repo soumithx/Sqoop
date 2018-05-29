@@ -1,0 +1,10 @@
+sqoop import --connect jdbc:mysql://mysql.example.com/sqoop \
+--user-name sqoop \
+--password sqoop \
+--table cities 
+--num-mappers 10
+
+
+
+sing more mappers will lead to a higher
+number of concurrent data transfer tasks, which can result in faster job completion.

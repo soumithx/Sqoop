@@ -1,0 +1,12 @@
+to decrease the over all size occupied in HDFS,it can be possible by compressing the generated file
+
+sqoop import --connect jdbc:mysql://mysql.example.com/sqoop --username sqoop --password sqoop --table cities --compress
+
+Default compression is GZIp codeac,all files end up with .gz
+
+to change the default file
+
+sqoop import --connnect jdbc:mysql://mysql.example.com  --username sqoop --password sqoop -tables cities --compress --compression-codec org.apache.hadoop.io.express.BZIP2Codec.
+
+
+
