@@ -1,0 +1,15 @@
+the tab-separated CSv file is the default file format.we can change by following this procedure
+
+### For Sequence file
+sqoop import --connect jdbc:mysql//mysql.example.com/sqoop --username sqoop --pasword sqoop --table cities --as-sequencefile
+
+#### For avro file
+sqoop import --connect jdbc:mysql://mysql.example.com/sqoop --username sqoop --password sqoop --table cities --as-avrodatafile
+
+
+
+
+
+
+
+

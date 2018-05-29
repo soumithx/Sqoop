@@ -1,0 +1,40 @@
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop \
+--password sqoop \
+--tables cities 
+
+## the result of this command will be comma separated CSV files where each row is stored in a single line.
+
+sqoop import \
+--connect jdbc:mysql://mysql.example.co,/sqoop \
+--username sqoop \
+--password sqoop \
+--table cities \
+--target-dir /etl/input/cities  #to speicfy the parent directory for all sqoop jobs we use 
+--warehouse-dir parameter
+
+
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop
+--password sqoop
+--table cities 
+--where "country = 'usa'"                  ######### subset of data 
+
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop
+--table cities 
+-P                            ### will read the password from standard input
+
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop 
+--table cities
+--password-file sss
+
+
+
+
+
