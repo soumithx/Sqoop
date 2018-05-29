@@ -1,0 +1,15 @@
+some times the data in your table is updated or  modified,we can use the --last-modifed mode instead of append.
+
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop \
+--password sqoop \
+--incremental lastmodified \
+--check-column last_update_date
+--last-value "2013:0010:qwe2e"
+
+ 
+
+
+incremental lastmodified mode requires a column holding date value or timestamp datetime,data ,time containing information contains information when each row is updated.
+

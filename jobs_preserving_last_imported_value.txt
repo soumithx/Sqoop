@@ -1,0 +1,30 @@
+every time we need to remember last import value,thats a tough task for us.to over come this problem there is concept call jobs,
+
+we can take advantage of built-in sqoop metastore that allows you to save all parameters for later use.
+
+sqoop job \
+--create visits \
+-- \
+import 
+--connect jdbc:mysql://mysql.example.com/sqop \
+--username sqoop \
+--password sqoop \
+--table visits \
+--increment append \
+--check-column id \
+--last-value 0
+
+A job can start with        -----> sqoop job --exec visits
+retain job list with        -----> sqoop job --list 
+Remove the job with         -----> sqoop job --delete visits 
+saved job definiations      -----> sqoop job --show visits 
+
+
+way, users do not need to
+remember the last imported value after each execution; everything is handled auto‐
+matically.
+
+
+
+
+  
