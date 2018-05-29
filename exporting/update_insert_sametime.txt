@@ -1,0 +1,6 @@
+when the modified data and new data to be updated in rdbms 
+
+sqoop --connect ffff --username xxx --password xxxx --table cities --update-key id --update-mode allowinsert
+
+
+

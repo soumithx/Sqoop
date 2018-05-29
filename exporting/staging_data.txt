@@ -1,0 +1,17 @@
+to ensure sqoop will either export all data from hadoop to your databse or export no data,
+we can use staging table to first load the data into temporary table.
+
+sqoop export 
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop
+--password sqoop 
+--table cities 
+--staging-table staging_cities
+
+
+sqoop opens a new transaction to move data from staging table to final destination.if and only if all parallel tasks sucessfully transfer data.
+
+
+--clear-staging-table
+
+

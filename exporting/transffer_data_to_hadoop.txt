@@ -1,0 +1,14 @@
+many jobs produces data on hadoop cluster,we need to transfer this data to your relational database .
+
+
+sqoop export \
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop
+--password sqoop
+--table cities 
+--export-dir cities 
+
+instead of transferring data from  the relational database using 'SELECT' 
+sqoop will tranfer the data to rdbms using INSERT
+
+
