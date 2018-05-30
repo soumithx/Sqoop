@@ -1,0 +1,15 @@
+when data contain characters that are hive limiters,we can tell sqoop to automatically clean your data using '--hive-drop-import-delims'  which will remove \n,\t  and \01 from all stringed columns 
+
+sqoop import \
+--connect jdbc:mysql.example.com/sqoop \
+--username sqoop
+--password sqoop
+--table cities 
+--hive-import
+--hive-drop-import-delims
+
+
+
+if you dont want to remove delimter and replace by other string you can use --hive-delims-replacement "special"
+
+

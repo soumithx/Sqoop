@@ -1,0 +1,18 @@
+Sqoop supports hive parationing,sqoop can automatically import data into the partition rather than only to the table.
+we need to specify two parameters 
+--hive-partition-key  ---> Contains name of the column
+--hive-partition-value  ----> which specifes the desired value.
+
+if your partitoion column contain 'day' and you want to insert the data into the '2012-05-33'
+
+sqoop import \
+--connect jdbc:mysql://mysql.example.com/sqoop
+--username sqoop \
+--password sqoop \
+--table cities \
+--hive-import \
+--hive-partition-key day \
+--hive-partition-value '2013-22-1222'
+
+
+

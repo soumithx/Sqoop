@@ -1,0 +1,13 @@
+sqoop import --connect jdbc:mysql://localhost:3306/sqoop 
+--username root 
+-P 
+--split-by id 
+--columns id,name 
+--table customer  
+--target-dir /user/cloudera/ingest/raw/customers 
+--fields-terminated-by "," 
+--hive-import 
+--create-hive-table 
+--hive-table sqoop_workspace.customers
+
+

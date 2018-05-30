@@ -1,0 +1,1 @@
+sqoop export –connect jdbc:mysql://localhost/db1 –username root –P  –table Company2Mysql –export-dir /user/hive/warehouse/company2hive –input-fields-terminated-by ‘\001’ -m 1
