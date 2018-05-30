@@ -1,0 +1,29 @@
+sqoop import 
+--connect jdbc:mysql://mysql.example.com/sqoop \
+--username sqoop
+--password sqoop
+--tables  cities 
+--hive-import
+
+The biggest advantage of using Sqoop for populating tables in Hive is that it can auto‐
+matically populate the metadata for you.
+
+if the table in hive does not exist,sqoop will create it based on metadata fetched from your table.if the table already exists sqoop wil import the data 
+
+in sqoop to hive ,conversion is straight forward VARCHAR,CHAR to string 
+
+default mapping does not work some times... 
+--map-column-hive id=String,price=DECIMAL
+
+during hive import sqoop will do normal hdfs import to a temporary location.After Sucessful import sqoop generates two queries one for creating table and another one is loading data from a temporary location. 
+		 use --target-dir or --warehouse-dir 
+
+
+--> if the table is exist already,it will append newly imported data.
+
+--> to overwrite that data, we can use a parameter 
+		--hive-overwrite ,which wil instruct sqoop to truncate an existing hive table,and load only the newly imported one,
+ to refresh the hive table on periodical basic is parameter is very helpfull.
+
+
+
